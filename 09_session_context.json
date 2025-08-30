@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "description": "Session markers and stats"
+  },
+  "rth": {
+    "start": "09:30",
+    "end": "16:00"
+  },
+  "eth": {
+    "start": "18:00",
+    "end": "09:30"
+  },
+  "markers": {
+    "ONH": 0.0,
+    "ONL": 0.0,
+    "PDH": 0.0,
+    "PDL": 0.0
+  },
+  "adr_points": 80.0,
+  "atr_points": 55.0
+}

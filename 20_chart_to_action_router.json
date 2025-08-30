@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "description": "Pipeline from chart to decisions"
+  },
+  "steps": [
+    "intake_chart_manifest",
+    "late_session_gate",
+    "cushion_gate",
+    "extract_levels_and_pivots",
+    "failed_breakdown_monitor",
+    "failed_breakout_monitor",
+    "determine_bias_via_if_then",
+    "build_immediate_instructions",
+    "inject_kpi_scoreboard",
+    "emit_tradeplay_v2",
+    "journal_autopopulate",
+    "log_review_stub"
+  ],
+  "fallbacks": {
+    "missing_levels": "use nearest visible structure + POC",
+    "default_stop_ticks": 6
+  },
+  "feature_flags": {
+    "fd_watch": {
+      "default": true,
+      "run_override_key": "fd_watch",
+      "off_behavior": "skip_failed_breakdown_monitor_step"
+    },
+    "fb_watch": {
+      "default": true,
+      "run_override_key": "fb_watch",
+      "off_behavior": "skip_failed_breakout_monitor_step"
+    }
+  },
+  "pre_entry_gates": {
+    "cushion_gate": {
+      "min_cushion_source": "risk_policy.trailing_dd_cushion_min_usd",
+      "no_go_behavior": "suppress_entries_and_emit_warning"
+    },
+    "late_session_gate": {
+      "enabled": true,
+      "rth_end": "16:00",
+      "lockout_minutes": 15,
+      "exceptions": {
+        "allow_if_basing_at_or_above": "T2_zone",
+        "campaign_mode": false
+      },
+      "no_go_behavior": "suppress_entries_and_emit_warning"
+    }
+  },
+  "outputs": {
+    "scoreboard": {
+      "enabled": true,
+      "metrics_source": "scorecard_metrics",
+      "targets_source": "kpi_targets"
+    }
+  }
+}

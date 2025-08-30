@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "description": "Play definitions"
+  },
+  "plays": [
+    {
+      "name": "Momentum",
+      "trigger": "break_and_hold",
+      "entry": "first_pullback",
+      "targets": [
+        "1.0R",
+        "1.5R",
+        "measured"
+      ],
+      "invalidation": "close_back_inside"
+    },
+    {
+      "name": "MeanReversion",
+      "trigger": "extreme_reject",
+      "entry": "tag_level",
+      "targets": [
+        "mid",
+        "vwap"
+      ],
+      "invalidation": "higher_high_lower_low"
+    },
+    {
+      "name": "NeutralTheta",
+      "trigger": "range_defined",
+      "structures": [
+        "iron_condor",
+        "calendar"
+      ]
+    },
+    {
+      "name": "Event",
+      "trigger": "catalyst",
+      "structures": [
+        "calendar",
+        "straddle"
+      ]
+    },
+    {
+      "name": "Hedge",
+      "trigger": "portfolio_delta",
+      "structures": [
+        "put_spread",
+        "bear_call"
+      ]
+    },
+    {
+      "name": "YOLO",
+      "trigger": "asymmetric_shot",
+      "risk": {
+        "max_pct": 1.0
+      }
+    }
+  ]
+}

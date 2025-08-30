@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "description": "Template for the big bold block"
+  },
+  "title": "🚨 IMMEDIATE INSTRUCTIONS — {symbol}",
+  "lines": [
+    "**HOLD {dir} ONLY WHILE {operator} `{pivot_zone}` (acceptance {minutes}m).**",
+    "**HARD STOP:** `{stop_zone}` on a 1–5m close.",
+    "**TRIM/TP:** {t1} / {t2} / {t3}; **runner** to {runner} only if base ≥ {base_req}.",
+    "**ADD ONLY:** on pullback/reclaim to `{add_zone}`; invalidation = loss of `{pivot_core}`."
+  ],
+  "defaults": {
+    "minutes": 5
+  }
+}

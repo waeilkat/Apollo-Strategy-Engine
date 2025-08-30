@@ -1,0 +1,32 @@
+{
+  "meta": {
+    "description": "IF→THEN ladder parameters"
+  },
+  "acceptance_minutes": 5,
+  "reclaim_minutes": 5,
+  "wick_threshold_ticks": 4,
+  "rules": [
+    {
+      "condition": "hold >= pivot",
+      "action": "bias_long"
+    },
+    {
+      "condition": "reject supply",
+      "action": "trim_wait_reclaim"
+    },
+    {
+      "condition": "lose structure",
+      "action": "exit_flat"
+    }
+  ],
+  "adaptive_acceptance": {
+    "enabled": true,
+    "vol_reference": "ADR_vs_median",
+    "windows_minutes": {
+      "low_vol": 5,
+      "high_vol": 10,
+      "very_high_vol": 15
+    },
+    "selection_rule": "use low_vol if ADR_today <= ADR_median; high_vol if ADR_today <= 1.3*ADR_median; else very_high_vol"
+  }
+}

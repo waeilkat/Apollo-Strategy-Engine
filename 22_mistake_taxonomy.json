@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "description": "Standard mistake tags"
+  },
+  "tags": [
+    {
+      "code": "BE-early",
+      "desc": "Moved to break-even before T1 + base"
+    },
+    {
+      "code": "Add-into-resistance",
+      "desc": "Added before reclaim/base at supply"
+    },
+    {
+      "code": "Middle-entry",
+      "desc": "Entry without pivotal break + hold"
+    },
+    {
+      "code": "Late-no-time-stop",
+      "desc": "New risk late session without time stop"
+    },
+    {
+      "code": "Trail-PnL",
+      "desc": "Trailing by P&L, not structure"
+    },
+    {
+      "code": "FD-anticipation",
+      "desc": "Entered before reclaim acceptance (no 5–15m hold)"
+    },
+    {
+      "code": "FD-late-chase",
+      "desc": "Chased after the move; not first pullback to reclaim"
+    },
+    {
+      "code": "FD-missed",
+      "desc": "Skipped a confirmed failed breakdown setup"
+    },
+    {
+      "code": "FD-BE-early",
+      "desc": "Moved to break-even before T1 + base on FD setup"
+    },
+    {
+      "code": "FD-invalidation-ignored",
+      "desc": "Did not exit on 1–5m close back under reclaimed level"
+    }
+  ]
+}

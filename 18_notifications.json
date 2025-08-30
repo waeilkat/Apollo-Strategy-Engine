@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "description": "Alert thresholds"
+  },
+  "alerts": [
+    {
+      "symbol": "ES",
+      "type": "level_touch",
+      "level": 6472.0
+    },
+    {
+      "symbol": "ES",
+      "type": "acceptance",
+      "level": 6484.0,
+      "minutes": 5
+    }
+  ]
+}

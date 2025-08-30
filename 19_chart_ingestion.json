@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "description": "How a screenshot is described"
+  },
+  "symbol": "ESU5",
+  "timeframes": [
+    "D",
+    "4H",
+    "15m",
+    "5m",
+    "1m"
+  ],
+  "overlays": [
+    "EMA_fast",
+    "EMA_slow",
+    "VWAP",
+    "SAR",
+    "VolumeProfile"
+  ],
+  "drawn": {
+    "trendlines": true,
+    "channels": true,
+    "levels": true
+  },
+  "color_semantics": {
+    "green": "support/POC/entry",
+    "red": "resistance/targets/stops",
+    "white": "trendlines"
+  }
+}

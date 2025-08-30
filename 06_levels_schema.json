@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "description": "How key levels are stored"
+  },
+  "symbol": "ESU5",
+  "range": {
+    "low": 6460.0,
+    "high": 6490.0
+  },
+  "levels": [
+    {
+      "type": "pivot",
+      "price": 6471.5,
+      "tag": "POC",
+      "strength": 3
+    },
+    {
+      "type": "resistance",
+      "price": 6484.0,
+      "tag": "supply",
+      "strength": 2
+    },
+    {
+      "type": "support",
+      "price": 6466.0,
+      "tag": "structure",
+      "strength": 2
+    }
+  ],
+  "hygiene": {
+    "daily_refresh": [
+      "POC",
+      "PDH",
+      "PDL",
+      "ONH",
+      "ONL"
+    ],
+    "decision_pivot_rule": "current_POC_or_highest_volume_node_near_VWAP",
+    "surface_on_sheet": true
+  }
+}

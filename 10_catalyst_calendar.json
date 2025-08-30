@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "description": "Upcoming events and importance"
+  },
+  "events": [
+    {
+      "date": "2025-09-01",
+      "time": "08:30",
+      "name": "CPI",
+      "weight": 5
+    },
+    {
+      "date": "2025-09-18",
+      "time": "14:00",
+      "name": "FOMC",
+      "weight": 5
+    }
+  ],
+  "source": "official_economic_calendar"
+}

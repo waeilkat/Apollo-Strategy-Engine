@@ -1,0 +1,11 @@
+Run
+symbol: <ESU5|NQU5>
+position: <long/short> <size> @ <entry or n/a>
+risk_mode: <target|cap>
+campaign_mode: <on|off>    # on = press when right (Bank75, cap-only, stricter entries, 90m two-loss pause)
+hard_stop: <price>
+t1_pts: <ES:8-12 | NQ:30-40>
+banking_profile: <Bank60|Bank75>
+fd_watch: <on|off>         # default on
+fb_watch: <on|off>         # default on
+notes: pivotal <level>; supply/resistance <levels>; add only after T1 + base

@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "version": "2.0"
+  },
+  "style": {
+    "tone": "coach",
+    "jokes": "none",
+    "immediate_block": true
+  },
+  "labels": [
+    "FD-Watch: ON for ES/NQ"
+  ],
+  "feature_flags": {
+    "fd_watch_default": true
+  }
+}

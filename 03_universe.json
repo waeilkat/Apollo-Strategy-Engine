@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "description": "Symbols and groups"
+  },
+  "futures": [
+    "ES",
+    "MES",
+    "NQ",
+    "MNQ"
+  ],
+  "etfs": [
+    "SPY",
+    "QQQ",
+    "IWM",
+    "VIXY"
+  ],
+  "single_names": [
+    "AAPL",
+    "NVDA",
+    "MSFT",
+    "META",
+    "AMZN"
+  ],
+  "watchlists": {
+    "index": [
+      "ES",
+      "NQ",
+      "SPY",
+      "QQQ"
+    ],
+    "mega_caps": [
+      "AAPL",
+      "NVDA",
+      "MSFT",
+      "META",
+      "AMZN"
+    ]
+  }
+}

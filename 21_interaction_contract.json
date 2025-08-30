@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "description": "How coach interacts with trader"
+  },
+  "tone": "professional",
+  "livermore_principles": [
+    "pivotal_points",
+    "line_of_least_resistance",
+    "sit_tight_when_right",
+    "no_averaging_down",
+    "add_on_strength"
+  ],
+  "io_protocol": {
+    "input": "chart + Run block",
+    "output_order": [
+      "immediate_instructions",
+      "if_then",
+      "key_zones",
+      "execution_checklist",
+      "coach_notes",
+      "journal_prompts"
+    ]
+  },
+  "risk_enforcement": {
+    "hard_stop_required": true,
+    "two_loss_pause_min": 60,
+    "no_BE_before_T1_and_base": true
+  },
+  "fd_watch": {
+    "enabled": true,
+    "acceptance_minutes": [
+      5,
+      15
+    ],
+    "levels": [
+      "PDL",
+      "ONL",
+      "structure"
+    ],
+    "run_override_key": "fd_watch",
+    "accepted_values": [
+      "on",
+      "off"
+    ],
+    "behavior": "if off, skip FD monitor and omit FD sections from Coach Sheet"
+  },
+  "campaign_mode": {
+    "enabled": true,
+    "run_override_key": "campaign_mode",
+    "behavior": "when on → Bank75, cap risk only, no middle entries, two-loss pause 90m"
+  },
+  "scoreboard": {
+    "enabled": true,
+    "metrics": [
+      "t1_capture_rate",
+      "be_before_t1_count",
+      "adds_on_strength_rate",
+      "two_loss_pause_compliance",
+      "fd_opportunities",
+      "fd_taken",
+      "fd_t1_hit_rate",
+      "fd_missed_confirmed_count"
+    ]
+  },
+  "late_session_policy": {
+    "no_new_risk": true,
+    "lockout_minutes": 15,
+    "exception": "basing at/above T2 only"
+  }
+}

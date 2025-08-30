@@ -1,0 +1,9 @@
+{
+  "soft_risk_usd": 600,
+  "hard_cap_usd": 800,
+  "daily_loss_limit_usd": 1200,
+  "two_loss_pause_min": 60,
+  "time_stop_minutes": 30,
+  "trailing_dd_cushion_min_usd": 600,
+  "risk_mode_default": "target"
+}

@@ -1,0 +1,50 @@
+
+//@version=5
+indicator("Acceptance Timer — Reclaim Monitor (v1)", overlay=true, timeframe="", timeframe_gaps=true)
+
+// === Inputs ===
+level        = input.float(title="Reclaim Level (price)", defval=close, step=0.25)
+above_mode   = input.bool(title="Require Acceptance Above Level? (true=Above, false=Below)", defval=true)
+acc_min      = input.int(title="Acceptance Minutes (target)", defval=10, minval=1, maxval=60)
+show_label   = input.bool(title="Show Floating Label", defval=true)
+show_bg      = input.bool(title="Shade when Accepted", defval=true)
+
+// === Per-bar seconds ===
+sec_per_bar = switch
+    timeframe.isseconds  => timeframe.multiplier
+    timeframe.isminutes  => timeframe.multiplier * 60
+    timeframe.isdaily    => 24 * 60 * 60
+    => 60  // fallback
+
+// === Reclaim state detection ===
+// A "reclaim start" is the first bar that closes back on the acceptance side of the level
+on_accept_side = above_mode ? close >= level : close <= level
+was_offside    = above_mode ? nz(close[1] < level) : nz(close[1] > level)
+reclaim_start  = on_accept_side and was_offside
+
+// Track elapsed seconds on acceptance side since the most recent reclaim start
+var float accept_sec = 0.0
+if reclaim_start
+    accept_sec := 0.0
+else
+    if on_accept_side
+        accept_sec += sec_per_bar
+    else
+        accept_sec := 0.0
+
+acc_minutes = accept_sec / 60.0
+accepted    = acc_minutes >= acc_min
+
+// === Visuals ===
+plot(level, color=color.new(color.orange, 0), style=plot.style_linebr, linewidth=2, title="Reclaim Level")
+
+label_text = str.tostring(acc_minutes, format.mintick) + "m / " + str.tostring(acc_min) + "m"
+label_color = accepted ? color.new(color.green, 0) : color.new(color.yellow, 0)
+if show_label
+    label.delete(label.new(bar_index, level, "Acceptance: " + label_text, style=label.style_label_left, textcolor=color.black, color=label_color))
+
+bgcolor(show_bg and accepted ? color.new(color.green, 85) : na)
+
+// Alerts
+alertcondition(reclaim_start, title="Reclaim Started", message="Reclaim started at {{close}} vs level {{plot_0}}")
+alertcondition(accepted, title="Acceptance Achieved", message="Acceptance met: " + str.tostring(acc_min) + "m above/below level")

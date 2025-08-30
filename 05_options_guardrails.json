@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "description": "Minimums/metrics for options"
+  },
+  "min_POP_pct": 60,
+  "min_OI": 500,
+  "min_bid": 0.05,
+  "max_spread_pct": 15,
+  "preferred_DTE": {
+    "theta": 30,
+    "yolo": 5,
+    "event": 7
+  },
+  "delta_targets": {
+    "debit": 0.35,
+    "credit_short": 0.25
+  }
+}

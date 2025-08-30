@@ -1,0 +1,22 @@
+{
+  "meta": {
+    "description": "Configure data providers and secrets"
+  },
+  "providers": [
+    {
+      "name": "web_finance",
+      "status": "active"
+    },
+    {
+      "name": "finnhub",
+      "status": "optional",
+      "base_url": "https://finnhub.io/api/v1",
+      "token_env": "FINNHUB_TOKEN"
+    }
+  ],
+  "refresh": {
+    "quotes": "on_demand",
+    "options": "on_demand",
+    "breadth": "on_demand"
+  }
+}

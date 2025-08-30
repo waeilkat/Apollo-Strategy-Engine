@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "description": "Targets for behavior change"
+  },
+  "targets": {
+    "t1_capture_rate": 0.8,
+    "be_before_t1_count": 0,
+    "adds_on_strength_rate": 0.9,
+    "two_loss_pause_compliance": 1.0,
+    "fd_t1_hit_rate": 0.7,
+    "fd_missed_confirmed_count": 0
+  }
+}

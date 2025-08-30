@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "description": "Schedules for prompts"
+  },
+  "pre_market": {
+    "cron": "weekday 08:30 ET"
+  },
+  "midday": {
+    "cron": "weekday 12:30 ET"
+  },
+  "eod": {
+    "cron": "weekday 15:55 ET"
+  },
+  "weekly": {
+    "cron": "sun 18:00 ET"
+  }
+}

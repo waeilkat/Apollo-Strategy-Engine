@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "description": "Translate R to contracts/shares"
+  },
+  "tick_values": {
+    "ES": 12.5,
+    "MES": 1.25,
+    "NQ": 5.0,
+    "MNQ": 0.5
+  },
+  "calc": {
+    "formula": "floor(risk_usd / (stop_ticks * tick_value))"
+  },
+  "defaults": {
+    "risk_usd": 150.0
+  }
+}

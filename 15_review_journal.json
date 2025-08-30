@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "description": "Structured EOD/Sun review"
+  },
+  "fields": [
+    "date",
+    "ticker",
+    "setup",
+    "planned",
+    "executed",
+    "R",
+    "PnL",
+    "mistakes",
+    "lessons",
+    "next_steps",
+    "t1_hit",
+    "be_before_t1",
+    "add_only_on_strength",
+    "mistake_tag",
+    "fd_candidate_level",
+    "fd_state",
+    "fd_acceptance_m",
+    "fd_entry_taken",
+    "fd_entry_time",
+    "fd_t1_hit",
+    "fd_reason",
+    "fd_mistake_tag"
+  ],
+  "autopopulate": {
+    "fields": [
+      "t1_hit",
+      "be_before_t1",
+      "add_only_on_strength",
+      "mistake_tag",
+      "fd_candidate_level",
+      "fd_state",
+      "fd_acceptance_m",
+      "fd_entry_taken",
+      "fd_entry_time",
+      "fd_t1_hit",
+      "fd_reason",
+      "fd_mistake_tag"
+    ],
+    "source": "latest_coach_sheet"
+  }
+}

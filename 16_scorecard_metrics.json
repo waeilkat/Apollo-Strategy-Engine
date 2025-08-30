@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "description": "Performance summary keys"
+  },
+  "metrics": [
+    "win_rate",
+    "avg_R",
+    "expectancy_R",
+    "max_drawdown_R",
+    "avg_trade_time",
+    "avg_winner_usd",
+    "avg_loser_usd",
+    "profit_factor",
+    "t1_capture_rate",
+    "be_before_t1_count",
+    "adds_on_strength_rate",
+    "two_loss_pause_compliance",
+    "fd_opportunities",
+    "fd_taken",
+    "fd_t1_hit_rate",
+    "fd_missed_confirmed_count"
+  ]
+}

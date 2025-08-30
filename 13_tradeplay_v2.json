@@ -1,0 +1,74 @@
+{
+  "play_id": "string",
+  "as_of": "YYYY-MM-DD HH:MM ET",
+  "playbook": "Momentum|Mean-Reversion|Neutral/Theta|Event|Hedge|YOLO",
+  "ticker": "string|null",
+  "universe": [
+    "SPY",
+    "QQQ",
+    "ES",
+    "NQ",
+    "sector"
+  ],
+  "thesis": "string",
+  "bias": "bullish|bearish|neutral",
+  "timeframe": "scalp|intraday|swing",
+  "if_then": [
+    {
+      "condition": "string",
+      "action": "string",
+      "invalidation": "string",
+      "targets": [
+        "T1",
+        "T2",
+        "T3"
+      ]
+    }
+  ],
+  "levels": {
+    "support": [],
+    "resistance": []
+  },
+  "structure": {
+    "type": "debit|credit|calendar|iron_condor|stock",
+    "legs": [],
+    "dte": 0,
+    "debit_credit": 0.0,
+    "max_loss": 0.0,
+    "max_profit": 0.0
+  },
+  "metrics": {
+    "bid": 0.0,
+    "ask": 0.0,
+    "mid": 0.0,
+    "oi": 0,
+    "volume": 0,
+    "delta": 0.0,
+    "gamma": 0.0,
+    "theta": 0.0,
+    "vega": 0.0,
+    "ivr": 0.0,
+    "ivp": 0.0,
+    "pop_pct": 0.0,
+    "breakevens": []
+  },
+  "risk": {
+    "R": 1.0,
+    "size_units": "contracts|shares",
+    "stop": "price/condition",
+    "take_profit": [],
+    "notes": ""
+  },
+  "sources": [
+    {
+      "name": "provider",
+      "timestamp": "ISO",
+      "notes": ""
+    }
+  ],
+  "execution": {
+    "entry_note": "string",
+    "management": "string",
+    "exit_rules": "string"
+  }
+}

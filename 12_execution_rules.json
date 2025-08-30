@@ -1,0 +1,99 @@
+{
+  "management": {
+    "no_BE_before_T1_and_base": true,
+    "two_loss_pause_min": 60,
+    "time_stop_minutes": 30,
+    "adds_on_strength_only": true,
+    "adds_smaller_than_initial": true
+  },
+  "banking_profiles": {
+    "Bank60": {
+      "MES_split": [
+        14,
+        5,
+        3
+      ],
+      "MNQ_split": [
+        7,
+        3,
+        1
+      ],
+      "notes": "≈60–65% at T1"
+    },
+    "Bank75": {
+      "MES_split": [
+        17,
+        3,
+        2
+      ],
+      "MNQ_split": [
+        8,
+        2,
+        1
+      ],
+      "notes": "≈75% at T1"
+    }
+  },
+  "t1_defaults": {
+    "ES_pts": 10,
+    "NQ_pts": 35,
+    "ES_range": [
+      8,
+      12
+    ],
+    "NQ_range": [
+      30,
+      40
+    ]
+  },
+  "oco_profiles": {
+    "MES_target": {
+      "stop_pts": 5.25
+    },
+    "MES_cap": {
+      "stop_pts": 7.25
+    },
+    "MNQ_target": {
+      "stop_pts": 27.25
+    },
+    "MNQ_cap": {
+      "stop_pts": 36.25
+    }
+  },
+  "meta": {
+    "description": "Execution with OCO presets and banking logic"
+  },
+  "campaign_mode": {
+    "default": "off",
+    "run_override_key": "campaign_mode",
+    "accepted_values": [
+      "on",
+      "off"
+    ],
+    "when_on": {
+      "enforce_risk_mode": "cap",
+      "default_banking_profile": "Bank75",
+      "entry_location_rule": "pivot_only_no_middle_entries",
+      "two_loss_pause_min_override": 90
+    }
+  },
+  "banking_auto_select": {
+    "enabled": true,
+    "switch_to": "Bank75",
+    "conditions": {
+      "t1_to_stop_ratio_min": 1.6,
+      "min_acceptance_minutes": 10
+    },
+    "default_profile": "Bank60"
+  },
+  "late_session": {
+    "no_new_risk": true,
+    "rth_end": "16:00",
+    "lockout_minutes": 15,
+    "exceptions": {
+      "allow_if_basing_at_or_above": "T2_zone",
+      "campaign_mode": false
+    },
+    "note": "Blocks new entries in last 15m of RTH unless already basing at/above T2; campaign_mode exception disallowed."
+  }
+}
